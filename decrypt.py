@@ -1,5 +1,7 @@
-#coding:utf-8
-
+# encoding=utf-8
+"""
+woff解密器
+"""
 from util import dec
 from conf import decrypt_tags
 from bs4.element import Tag

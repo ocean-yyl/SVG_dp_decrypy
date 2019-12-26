@@ -1,19 +1,21 @@
-#codng:utf-8
-
+# encoding=utf-8
+"""
+下载器和解析器
+"""
 import requests
-import html
-import re 
 
-def download_and_save(url,save_path,mode='wb',**request_kwargs):
-    with open(save_path,mode) as f:
-        response = requests.get(url,**request_kwargs)
+
+# 文件下载url并保存
+def download_and_save(url, save_path, mode='wb', **request_kwargs):
+    with open(save_path, mode) as f:
+        response = requests.get(url, **request_kwargs)
         content = response.content
         f.write(content)
 
-def hex_to_str(s):
-    return ''.join([chr(i) for i in [int(b, 16) for b in s.split(' ')]])
 
+# 异化字符转为编码
 def dec(a):
-    c =str(a.strip().encode('raw_unicode_escape').replace(b'\\u',b''),'utf-8')
-    # c =  eefe,c =  f758
+    # print(a)  # a = '',''
+    c = str(a.strip().encode('raw_unicode_escape').replace(b'\\u', b''), 'utf-8')
+    # print(c)  # c = 'e892','f344'
     return c

@@ -1,5 +1,7 @@
-#coding:utf-8
-
+# encoding=utf-8
+"""
+配置文件
+"""
 from fake_useragent import UserAgent
 
 schema = 'https://'
