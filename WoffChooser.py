@@ -55,9 +55,9 @@ f8170d6a.woff   评论区解密
 def get_addr_num_woff_from_file():
     TTGlyphs = []
     # 加载地址与电话解密对应的woff文件
-    font = TTFont("woff/8c29a8dd.woff")
+    font = TTFont("woff/80eb581a.woff")
     TTGlyphs.extend(font['cmap'].tables[0].ttFont.getGlyphOrder()[2:])
-    font = TTFont("woff/f3b1409c.woff")
+    font = TTFont("woff/907ae099.woff")
     TTGlyphs.extend(font['cmap'].tables[0].ttFont.getGlyphOrder()[2:])
     return TTGlyphs
 
@@ -65,7 +65,9 @@ def get_addr_num_woff_from_file():
 # 仅仅对于评论区的woff文件
 def get_comment_woff_from_file():
     TTGlyphs = []
-    font = TTFont("woff/f8170d6a.woff")  # 评论区解密对应的woff文件,非f3
+    font = TTFont("woff/bcd2a582.woff")  # 评论区解密对应的woff文件,非f3
+    TTGlyphs.extend(font['cmap'].tables[0].ttFont.getGlyphOrder()[2:])
+    font = TTFont("woff/d2c56b1a.woff")
     TTGlyphs.extend(font['cmap'].tables[0].ttFont.getGlyphOrder()[2:])
     return TTGlyphs
 
