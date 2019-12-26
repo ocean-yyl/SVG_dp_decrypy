@@ -40,7 +40,7 @@ def download_woff(svg_css):
         download_and_save(url, "woff/" + filename)
         # 4. 使用fontTools库解析woff字体文件，获取字体排序列表
         font = TTFont("woff/" + filename)
-        font.saveXML("xml/" + filename.split(".")[0] + ".xml")  # 存储为xml文件
+        # font.saveXML("xml/" + filename.split(".")[0] + ".xml")  # 存储为xml文件
         TTGlyphs.extend(font['cmap'].tables[0].ttFont.getGlyphOrder()[2:])
     return TTGlyphs
 

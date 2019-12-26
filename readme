@@ -1,2 +1,6 @@
 参考：https://github.com/01ly/Anti-Spider.git
 
+使用方法：
+1，运行WoffChooser.py，下载最新的woff文件。
+2，修改WoffChooser.py中解密时配置woff文件的函数，测试是否使用正确的woff文件。
+3，测试通过后，即可正常使用。

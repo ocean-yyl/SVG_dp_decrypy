@@ -39,7 +39,7 @@ woff_string = '''
 酱差像提队走嫩才刚午接重串回晚微
 周值费性桌拍跟块调糕'''
 
-woffs = [i for i in woff_string*3 if i!='\n' and i!=' ']
+woffs = [i for i in woff_string*2 if i!='\n' and i!=' ']
 
 if __name__ == '__main__':
     print(woffs)
