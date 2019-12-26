@@ -1,15 +1,19 @@
 # encoding=utf-8
 """
-字典
+字典woffs
 
 # 制作出解密用对应字体库，具体有两个思路：
 # 0x01:
-#       a. 可以使用百度FontEditor查看woff字体文件内容，链接：http://fontstore.baidu.com/static/editor/index.html
-#       b. 而后预览，后截图，使用腾讯文字识别上传截图识别出所有文字,制作字体库woffs。详细看woffs.py
+        a. 可以使用百度FontEditor查看woff字体文件内容。不过还需要下载.eot文件，在FontEditor页面上传.eot文件打开
+           并且，虽然有多个.eot文件，但是其实都是所有woff文件解密的合并。多个.eot文件是同样的，使用一个就ok.
+           链接：http://fontstore.baidu.com/static/editor/index.html
+        b. 而后预览，后截图，ocr文字识别上传截图识别出所有文字,清洗识别结果,制作出字体库woffs字典
+           文字识别链接：https://finereaderonline.com/en-us
+
 # 0x02：
-#       a. 第四步的 font_a.saveXML(woff_xml_path) 将woff字体文件转为xml文件
-#       b. 将字体xml文件中<glyf></glyf>标签中的所有<TTGlyph>标签内的name属性以及字体信息坐标获取出来，使用Matplotlib等绘图工具，根据坐标将字形轮廓绘画出来
-#       c. 将绘画结果字形图片利用腾讯文字识别api进行识别，存储对应{name:文字}字典
+        a. font.saveXML(woff_xml_path) 将woff字体文件转为xml文件
+        b. 将字体xml文件中<glyf></glyf>标签中的所有<TTGlyph>标签内的name属性以及字体信息坐标获取出来，使用Matplotlib等绘图工具，根据坐标将字形轮廓绘画出来
+        c. 将绘画结果字形图片利用腾讯文字识别api进行识别，存储对应{name:文字}字典
 """
 
 woff_string = '''
